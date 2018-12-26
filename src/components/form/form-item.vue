@@ -130,3 +130,13 @@
   }
 
 </script>
+<style>
+  .i-form-item-label-required::before {
+    content: '*';
+    color: red
+  }
+  .i-form-item-message {
+    color: red
+  }
+</style>
+
