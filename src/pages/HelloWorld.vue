@@ -54,6 +54,7 @@
         this.$refs.form.validate((valid) => {
           if(valid) {
             window.alert('提交成功')
+            console.log(this.formValidate)
           } else {
             window.alert('表单校验失败')
           }

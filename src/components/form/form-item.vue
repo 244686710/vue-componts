@@ -60,7 +60,7 @@
         let rules = this.getFilteredRule(trigger);
 
         if (!rules || rules.length === 0) {
-          return true;
+          return true
         }
 
         // 设置状态为校验中
@@ -102,7 +102,7 @@
       },
 
       // 重置数据
-      resetField () {
+      resetFields () {
         this.validateState = '';
         this.validateMessage = '';
 
@@ -114,7 +114,7 @@
     mounted() {
       // 如果没有出入prop,则无需校验，也就是无需缓存
       if (this.prop) {
-        this.dispatch('iForm', 'on-from-item-add', this);
+        this.dispatch('iForm', 'on-form-item-add', this);
 
         // 设置初始值，以便在重置时恢复默认值
         this.initialValue = this.fieldValue;
