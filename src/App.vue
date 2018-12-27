@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <router-view></router-view>
+   <ul>
+    <router-link tag="li" to="/formTest">表单组件测试</router-link>
+    <router-link tag="li" to="/findComponents">自定义findComponents验证</router-link>
+   </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './pages/HelloWorld.vue'
+
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+
 }
 </script>
 
@@ -24,5 +25,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.router-link-active {
+  color: blue
 }
 </style>

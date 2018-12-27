@@ -41,7 +41,6 @@
         return new Promise(resolve => {
           let valid = true;
           let count = 0;
-          console.log(this.fields)
           this.fields.forEach(field => {
             field.validate('', errors => {
               if (errors) {
@@ -61,7 +60,6 @@
     },
     created() {
       this.$on('on-form-item-add', (field) => {
-        console.log(field)
         if (field) this.fields.push(field);
       });
       this.$on('on-form-item-remove', (field) => {
