@@ -1,3 +1,11 @@
+/*
+ * 只有你认真开发过 Vue.js 独立组件，才会明白这 5 个函数的强大之处。
+ * @Author: Yuyd
+ * @Date: 2018-12-27 17:01:09
+ * @Last Modified by:   Yuyd
+ * @Last Modified time: 2018-12-27 17:01:09
+ */
+
 // 由一个组件，向上找到最近的指定组件
 /**
  * findComponentUpward 接收两个参数，第一个是当前上下文，比如你要基于哪个组件来向上寻找，
@@ -80,7 +88,6 @@ function findComponentsDownward (context, componentName) {
 /**
  * 相比其它 4 个函数，findBrothersComponents 多了一个参数 exceptMe，
  * 是否把本身除外，默认是 true。
- *
  * 寻找兄弟组件的方法，是先获取 context.$parent.$children，
  * 也就是父组件的全部子组件，这里面当前包含了本身，所有也会有第三个参数 exceptMe。
  * Vue.js 在渲染组件时，都会给每个组件加一个内置的属性 _uid，这个 _uid 是不会重复的，
