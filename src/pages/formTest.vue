@@ -7,6 +7,12 @@
       <i-form-item label="邮箱" prop="mail">
         <i-input v-model="formValidate.mail"></i-input>
       </i-form-item>
+      <i-form-item>
+        <i-checkbox-group  @on-change="handleCurrentChange" v-model="formValidate.value">
+          <i-checkbox label="a">checkboxA</i-checkbox>
+          <i-checkbox label="b">checkboxB</i-checkbox>
+        </i-checkbox-group>
+      </i-form-item>
     </i-form>
     <button @click="handleSubmit">提交</button>
     <button @click="handleReset">重置</button>
@@ -16,18 +22,23 @@
   import iForm from '../components/form/form.vue';
   import iFormItem from '../components/form/form-item.vue';
   import iInput from '../components/input/input.vue';
+  import iCheckboxGroup from '../components/checkbox/checkbox-group.vue'
+  import iCheckbox from '../components/checkbox/checkbox.vue'
 
   export default {
     components: {
       iForm,
       iFormItem,
-      iInput
+      iInput,
+      iCheckboxGroup,
+      iCheckbox
     },
     data() {
       return {
         formValidate: {
           name: '',
-          mail: ''
+          mail: '',
+          value: []
         },
         ruleValidate: {
           name: [{
@@ -63,6 +74,10 @@
 
       handleReset() {
         this.$refs.form.resetFields();
+      },
+
+      handleCurrentChange(val) {
+        console.log('checkboxGroup',val)
       }
     }
   }
