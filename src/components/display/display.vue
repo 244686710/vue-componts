@@ -4,7 +4,8 @@
 </template>
 <script>
   import Vue from 'vue';
-
+  // 生成随机字符串
+  import randomStr from '../../utils/random_str.js';
   export default {
     props: {
       code: {
@@ -17,7 +18,8 @@
         html: '',
         js: '',
         css: '',
-        component: null
+        component: null,
+        id: randomStr()
       }
     },
 
@@ -64,10 +66,31 @@
           }
         }
 
+      },
+
+      destroyCode () {
+        const $target = document.getElementById(this.id);
+        if($target) $target.parentNode.removeChild($target);
+
+        if(this.component) {
+          this.$refs.display.removeChild(this.component.$el);
+          this.component.$destroy();
+          this.component = null;
+        }
+
       }
     },
     mounted () {
       this.renderCode();
+    },
+    beforeDestroy () {
+      this.destroyCode()
+    },
+    watch: {
+      code () {
+        this.destroyCode();
+        this.renderCode()
+      }
     }
   }
 

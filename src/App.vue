@@ -3,7 +3,8 @@
    <router-view></router-view>
    <ul>
     <router-link to="/formTest">表单组件测试</router-link> <br>
-    <router-link to="/findComponents">自定义findComponents验证</router-link>
+    <router-link to="/findComponents">自定义findComponents验证</router-link><br>
+    <router-link to="/dispaly">dispaly</router-link>
    </ul>
   </div>
 </template>
