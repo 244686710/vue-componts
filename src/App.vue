@@ -4,7 +4,8 @@
    <ul>
     <router-link to="/formTest">表单组件测试</router-link> <br>
     <router-link to="/findComponents">自定义findComponents验证</router-link><br>
-    <router-link to="/dispaly">dispaly</router-link>
+    <router-link to="/display">dispaly</router-link><br>
+    <router-link to="/alert">弹框组件测试</router-link>
    </ul>
   </div>
 </template>
