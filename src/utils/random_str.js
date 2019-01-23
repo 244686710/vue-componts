@@ -4,6 +4,7 @@ export default function (len = 32) {
   const maxPos = $chars.length;
   let str = '';
   for (let i = 0; i < len; i++) {
+    // charAt()方法返回对应下标的字符串
     str += $chars.charAt(Math.floor(Math.random() * maxPos));
   }
   return str;

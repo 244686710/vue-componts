@@ -61,6 +61,7 @@
           if(this.css !== '') {
             const style = document.createElement('style');
             style.type = 'text/css';
+            style.id = this.id
             style.innerHTML = this.css
             document.getElementsByTagName('head')[0].appendChild(style);
           }

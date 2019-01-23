@@ -13,6 +13,12 @@ const code =
       }
     }
   }
-</script>`;
+</script>
+<style>
+  div {
+    background-color: #ff0000
+  }
+</style>
+`;
 
 export default code;
