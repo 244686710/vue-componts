@@ -2,8 +2,8 @@
  * 只有你认真开发过 Vue.js 独立组件，才会明白这 5 个函数的强大之处。
  * @Author: Yuyd
  * @Date: 2018-12-27 17:01:09
- * @Last Modified by:   Yuyd
- * @Last Modified time: 2018-12-27 17:01:09
+ * @Last Modified by: Yuyd
+ * @Last Modified time: 2019-01-24 12:27:30
  */
 
 // 由一个组件，向上找到最近的指定组件
@@ -102,10 +102,52 @@ function findBrothersComponents (context, componentName, exceptMe = true) {
   return res;
 }
 
+function typeOf(obj) {
+  const toString = Object.prototype.toString;
+  const map = {
+    '[object Boolean]'  : 'boolean',
+    '[object Number]'   : 'number',
+    '[object String]'   : 'string',
+    '[object Function]' : 'function',
+    '[object Array]'    : 'array',
+    '[object Date]'     : 'date',
+    '[object RegExp]'   : 'regExp',
+    '[object Undefined]': 'undefined',
+    '[object Null]'     : 'null',
+    '[object Object]'   : 'object'
+  };
+  return map[toString.call(obj)];
+}
+// deepCopy
+function deepCopy(data) {
+  const t = typeOf(data);
+  let o;
+
+  if (t === 'array') {
+    o = [];
+  } else if ( t === 'object') {
+    o = {};
+  } else {
+    return data;
+  }
+
+  if (t === 'array') {
+    for (let i = 0; i < data.length; i++) {
+      o.push(deepCopy(data[i]));
+    }
+  } else if ( t === 'object') {
+    for (let i in data) {
+      o[i] = deepCopy(data[i]);
+    }
+  }
+  return o;
+}
+
 export {
   findComponentUpward,
   findComponentsUpward,
   findComponentDownward,
   findComponentsDownward,
-  findBrothersComponents
+  findBrothersComponents,
+  deepCopy
 };
