@@ -1,14 +1,15 @@
 <template>
   <div id="app">
    <router-view></router-view>
-   <ul>
-    <router-link to="/formTest">表单组件测试</router-link> <br>
-    <router-link to="/findComponents">自定义findComponents验证</router-link><br>
-    <router-link to="/display">dispaly</router-link><br>
-    <router-link to="/alert">弹框组件测试</router-link><br>
-    <router-link to="/table-render">table-render</router-link><br>
-    <router-link to="/table-slot">table-slot</router-link>
-   </ul>
+   <div class="links">
+    <router-link class="link" to="/formTest">表单组件测试</router-link>
+    <router-link  class="link" to="/findComponents">自定义findComponents验证</router-link>
+    <router-link  class="link" to="/display">dispaly</router-link>
+    <router-link  class="link" to="/alert">弹框组件测试</router-link>
+    <router-link  class="link" to="/table-render">table-render</router-link>
+    <router-link  class="link" to="/table-slot">table-slot</router-link>
+    <router-link  class="link" to="/next-tick">nextTick</router-link>
+   </div>
   </div>
 </template>
 
@@ -32,5 +33,19 @@ export default {
 }
 .router-link-active {
   color: blue
+}
+.links {
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+}
+.link {
+  display: inline-block;
+  padding: 5px 10px;
+  height: 20px;
+  line-height: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 #ddd
 }
 </style>

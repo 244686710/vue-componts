@@ -6,6 +6,7 @@ import Display from '../pages/display'
 import Alert from '../pages/alert'
 import TableRender from '../pages/table-render.vue'
 import TableSlot from '../pages/table-slot.vue'
+import NextTick from '../pages/nextTick.vue'
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,7 @@ const routes = [
   { path: '/alert', component: Alert, name: 'alert' },
   { path: '/table-render', component: TableRender, name: 'table-render' },
   { path: '/table-slot', component: TableSlot, name: 'table-slot' },
+  { path: '/next-tick', component: NextTick, name: 'next-tick' },
 ]
 
 const router = new VueRouter({
